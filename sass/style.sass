@@ -1,0 +1,1444 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+/*===============  Base  ===============*/
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	background: url(../images/body-bg.png) center center no-repeat
+	background-size: cover
+	margin: 0
+	width: 100%
+	height: 100%
+
+.site
+	display: flex
+	flex-direction: column
+	height: 100%
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+header
+	position: fixed
+	top: 0
+	width: 100%
+	z-index: 1000
+
+
+	.container
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+		max-width: 1330px
+		padding: 0 85px
+		position: relative
+		margin: 0 auto
+		height: 68px
+		padding-top: 20px
+		margin-bottom: 132px
+		.site-nav
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: center
+			align-items: center
+			.burger
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				position: relative
+				align-items: center
+				justify-content: center
+				cursor: pointer
+				+tr(300ms)
+				&:hover
+					.wrapper
+						width: 40px
+					.middle
+						transform: translateX(12px)
+					p
+						visibility: visible
+				.wrapper
+					display: block
+					width: 16px
+					height: 32px
+					position: relative
+					vertical-align: center
+					+tr(300ms)
+				.top
+					display: block
+					text-align: center
+					.top-left
+						display: block
+						position: absolute
+						width: 	8px
+						height: 8px
+						border-top: 4px solid #ffffff
+						border-left: 4px solid #ffffff
+						left: 0
+						top: 0					
+					.top-right
+						display: block
+						position: absolute
+						width: 	8px
+						height: 8px
+						border-top: 4px solid #ffffff
+						border-right: 4px solid #ffffff
+						right: 0
+						top: 0
+						+tr(300ms)	
+				.middle
+					position: absolute
+					display: block
+					width: 16px
+					height: 8px
+					background-color: #ffffff
+					top: 12px
+					+tr(300ms)
+				.bottom
+					display: block
+					text-align: center
+					.bottom-left
+						display: block
+						position: absolute
+						width: 	8px
+						height: 8px
+						border-bottom: 4px solid #ffffff
+						border-left: 4px solid #ffffff
+						left: 0
+						bottom: 0
+					.bottom-right
+						display: block
+						position: absolute
+						width: 	8px
+						height: 8px
+						border-bottom: 4px solid #ffffff
+						border-right: 4px solid #ffffff
+						right: 0
+						bottom: 0
+				p
+					display: inline-block
+					+fz(11)
+					color: #ffffff
+					font-weight: 900
+					letter-spacing: 1.1px
+					text-transform: uppercase
+					line-height: 1.2
+					text-align: left
+					margin-left: 15px
+					margin-top: 0
+					margin-bottom: 0
+					visibility: hidden
+					+tr(300ms)
+	.logo
+		position: absolute
+		left: 50%
+		margin-left: -60px
+		a
+			display: block
+			width: 120px
+			height: 33px
+			padding-top: 8px
+	#order-btn
+		display: block
+		text-align: center
+		width: 200px
+		height: 48px
+		background-color: #ffffff 
+		+fz(11)
+		font-weight: 900
+		line-height: 48px
+		letter-spacing: 1.1px
+		color: #333333
+		text-transform: uppercase
+		border: 1px solid #ffffff
+		cursor: pointer
+		+tr(300ms)
+		&:hover
+			background-color: #333333
+			color: #ffffff
+			border: 1px solid #ffffff
+
+.site
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	.site-primary
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
+		position: relative
+		.slider-nav
+			position: fixed
+			width: 48px
+			right: 0
+			display: block
+			text-align: center
+			.arrows
+				display: block
+				.slick-disabled
+					opacity: .3
+					cursor: disable
+				.right
+					display: inline-block
+					background-image: url(../images/next-arrow.png)
+					width: 48px
+					height: 48px
+					cursor: pointer
+				.left
+					display: inline-block
+					background-image: url(../images/prev-arrow.png)
+					width: 48px
+					height: 48px
+					cursor: pointer
+		.dots
+			display: block
+			left: 0
+			position: fixed
+			height: 40%
+			p
+				display: block
+				left: 0
+				writing-mode: vertical-rl
+				transform: rotate(180deg)
+				margin-left: 35px
+				color: #ffffff
+				+fz(11)
+				font-weight: 900
+				text-transform: uppercase
+				letter-spacing: 1.1px
+				padding-bottom: 24px
+			.slider-dots 
+				position: fixed
+				display: block
+				left: 0
+				text-align: center
+				.slick-dots
+					padding: 0
+					margin-left: 40px
+					list-style: none
+					li
+						line-height: 0
+						margin-bottom: 8px
+						button
+							width: 8px
+							height: 8px
+							border: 1px solid #ffffff
+							background: none
+							opacity: 0.85
+							font-size: 0
+							cursor: pointer 
+							padding: 0
+						&.slick-active
+							button
+								background-color: #fff
+						
+		.site-content
+			width: 100%
+			.slider
+				height: 100vh
+				.slick-list
+					display: block
+					text-align: center
+					.slide
+						display: -webkit-flex
+						display: -moz-flex
+						display: -ms-flex
+						display: -o-flex
+						display: flex
+						justify-content: center
+						align-items: center
+						flex-direction: column
+						height: 100vh
+						position: relative
+						outline: none
+						.wrapper
+							display: table
+							height: 100%
+							width: 100%
+							.second-wrapper
+								display: table-cell
+								vertical-align: middle
+						&.slide_01
+							.top
+								display: block
+								position: relative
+								height: 84px
+								max-width: 984px
+								width: 100%
+								margin-bottom: 105px				
+								.top-left
+									position: absolute
+									width: 84px
+									height: 84px
+									border-top: 32px solid #ffffff
+									border-left: 32px solid #ffffff
+									top: 0
+									left: 0
+								p
+									+fz(23)
+									font-weight: 300
+									line-height: normal
+									letter-spacing: 0.5px
+									text-align: left
+									color: #ffffff
+									text-transform: uppercase
+									float: right
+									padding-right: 100px
+								.top-right
+									position: absolute
+									width: 84px
+									height: 84px
+									border-top: 32px solid #ffffff
+									border-right: 32px solid #ffffff
+									top: 0
+									right: 0			 
+							.middle
+								background: url(../images/logo-big.png) center center no-repeat
+								height: 205px
+								max-width: 757px
+								width: 100%
+								margin: 0 auto
+							.bottom
+								display: block
+								position: relative
+								height: 84px
+								max-width: 984px
+								width: 100%
+								margin-top: 105px
+								.bottom-left
+									position: absolute
+									width: 84px
+									height: 84px
+									border-bottom: 32px solid #ffffff
+									border-left: 32px solid #ffffff
+									bottom: 0
+									left: 0	
+								p
+									+fz(23)
+									font-weight: 300
+									line-height: normal
+									letter-spacing: 0.5px
+									text-align: left
+									color: #ffffff
+									text-transform: uppercase
+									float: left
+									position: absolute
+									bottom: 0
+									padding-left: 100px
+									margin: 0
+									span
+										text-decoration: underline
+								.bottom-right
+									position: absolute
+									width: 84px
+									height: 84px
+									border-bottom: 32px solid #ffffff
+									border-right: 32px solid #ffffff
+									bottom: 0
+									right: 0
+						&.slide_02
+							.projects
+								width: 100%
+								height: 785px
+								overflow: hidden
+								.elements-grid
+									width: 100%
+									.element-item
+										margin-bottom: 8px
+										width: 32.333%
+
+						&.slide_03
+							.about-us
+								width: 100%
+								height: 785px
+								overflow: hidden
+								background-color: #ffffff
+								display: -webkit-flex
+								display: -moz-flex
+								display: -ms-flex
+								display: -o-flex
+								display: flex
+								align-items: center
+								.text-about
+									overflow: hidden
+									height: 363px 
+									h2
+										text-align: left
+										color: #333333
+										+fz(40)
+										font-weight: 300
+										margin-bottom: 46px
+										margin-top: -17px
+										padding-left: 40px
+									p
+										text-align: left
+										color: #666666
+										+fz(14)
+										font-weight: 400
+										padding-left: 40px
+
+						&.slide_04
+							.blur-bg
+								&::before
+									content: ""
+									position: absolute
+									top: -16px
+									bottom: -16px
+									left: -16px
+									right: -16px
+									box-shadow: inset 0 0 35px rgba(255, 255, 255, 0.65)
+									background-color: #ffffff
+									opacity: 0.1
+									z-index: -1
+								.development
+									.top
+										display: block
+										.top-left
+											display: block
+											position: absolute
+											width: 	80px
+											height: 80px
+											border-top: 8px solid #ffffff
+											border-left: 8px solid #ffffff
+											left: 0
+											top: 0
+										h5
+											display: block
+											color: #ffffff
+											+fz(14)
+											font-weight: 300
+											+lh(14, 20)
+											letter-spacing: 0.28px
+											padding-left: 101px
+											max-width: 564px
+											width: 100%
+											text-align: left
+										.top-right
+											display: block
+											position: absolute
+											width: 	80px
+											height: 80px
+											border-top: 8px solid #ffffff
+											border-right: 8px solid #ffffff
+											right: 0
+											top: 0
+									.middle
+										height: 584px
+										margin: 14px 0
+										.dev-columns
+											display: -webkit-flex
+											display: -moz-flex
+											display: -ms-flex
+											display: -o-flex
+											display: flex
+											justify-content: center
+											.column-1
+												width: 317px
+												margin-right: 14px
+												.site-dev
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 229px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-1.png) no-repeat
+														width: 80px
+														height: 116px
+														right: 0
+														bottom: 0
+													.title
+														color: #333333;
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+														padding-bottom: 20px
+													ul
+														list-style: none
+														padding-left: 18px
+														li
+															a
+																color: #333333
+																+fz(14)
+																font-weight: 300
+																+lh(14, 24)
+																text-decoration: underline
+																letter-spacing: 0.42px
+																outline: 0
+																&:hover
+																	font-weight: 700
+																	letter-spacing: 0.42px
+																	text-decoration: none
+																	&::after
+																		content: ""
+																		position: absolute
+																		background: url(../images/hover_arrow.png) no-repeat
+																		width: 9px
+																		height: 12px
+																		margin-left: 6px
+																		margin-top: 8px
+
+												.smm
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 103px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-2.png) no-repeat
+														width: 91px
+														height: 77px
+														right: 0
+														bottom: 0
+													.title
+														color: #333333
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+												.seo
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 229px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-3.png) no-repeat
+														width: 111px
+														height: 112px
+														right: 0
+														bottom: 0
+													.title
+														color: #333333
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+														padding-bottom: 20px
+													ul
+														list-style: none
+														padding-left: 18px
+														li
+															a
+																color: #333333
+																+fz(14)
+																font-weight: 300
+																+lh(14, 24)
+																text-decoration: underline
+																letter-spacing: 0.14px
+																padding-bottom: 33px
+																outline: 0
+																&:hover
+																	font-weight: 700
+																	letter-spacing: 0.42px
+																	text-decoration: none
+																	&::after
+																		content: ""
+																		position: absolute
+																		background: url(../images/hover_arrow.png) no-repeat
+																		width: 9px
+																		height: 12px
+																		margin-left: 6px
+																		margin-top: 8px
+
+											.column-2
+												width: 317px
+												margin-right: 14px
+												.design
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 229px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-4.png) no-repeat
+														width: 82px
+														height: 150px
+														right: 0
+														bottom: 0
+													.title
+														color: #333333
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+														padding-bottom: 20px
+													ul
+														list-style: none
+														padding-left: 18px
+														li
+															a
+																color: #333333
+																+fz(14)
+																font-weight: 300
+																+lh(14, 24)
+																text-decoration: underline
+																letter-spacing: 0.14px
+																padding-bottom: 33px
+																outline: 0
+																&:hover
+																	font-weight: 700
+																	letter-spacing: 0.42px
+																	text-decoration: none
+																	&::after
+																		content: ""
+																		position: absolute
+																		background: url(../images/hover_arrow.png) no-repeat
+																		width: 9px
+																		height: 12px
+																		margin-left: 6px
+																		margin-top: 8px
+												.target-ads
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 229px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-5.png) no-repeat
+														width: 110px
+														height: 111px
+														right: 0
+														bottom: 0
+													.title
+														color: #333333
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+														padding-bottom: 20px
+													ul
+														list-style: none
+														padding-left: 18px
+														li
+															a
+																color: #333333
+																+fz(14)
+																font-weight: 300
+																+lh(14, 24)
+																text-decoration: underline
+																letter-spacing: 0.14px
+																padding-bottom: 33px
+																outline: 0
+																&:hover
+																	font-weight: 700
+																	letter-spacing: 0.42px
+																	text-decoration: none
+																	&::after
+																		content: ""
+																		position: absolute
+																		background: url(../images/hover_arrow.png) no-repeat
+																		width: 9px
+																		height: 12px
+																		margin-left: 6px
+																		margin-top: 8px
+												.mobile-ads
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 103px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-6.png) no-repeat
+														width: 77px
+														height: 89px
+														right: 0
+														bottom: 0
+													.title
+														color: #333333
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+			
+											.column-3
+												width: 317px
+												.contexts-ads
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 287px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-7.png) no-repeat
+														width: 75px
+														height: 132px
+														right: 0
+														top: 50%
+														margin-top: -66px
+													.title
+														color: #333333
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+														padding-bottom: 20px
+													ul
+														list-style: none
+														padding-left: 18px
+														li
+															a
+																color: #333333
+																+fz(14)
+																font-weight: 300
+																+lh(14, 24)
+																text-decoration: underline
+																letter-spacing: 0.14px
+																padding-bottom: 33px
+																outline: 0
+																&:hover
+																	font-weight: 700
+																	letter-spacing: 0.42px
+																	text-decoration: none
+																	&::after
+																		content: ""
+																		position: absolute
+																		background: url(../images/hover_arrow.png) no-repeat
+																		width: 9px
+																		height: 12px
+																		margin-left: 6px
+																		margin-top: 8px
+												.banners-ads
+													display: block
+													position: relative
+													text-align: left
+													background-color: #ffffff
+													margin-bottom: 13px
+													height: 287px
+													&::after
+														content: ""
+														position: absolute
+														display: block
+														background: url(../images/development-8.png) no-repeat
+														width: 133px
+														height: 134px
+														right: 0
+														bottom: 0
+													.title
+														color: #333333
+														+fz(16)
+														font-weight: 900
+														+lh(16, 30)
+														text-decoration: underline
+														text-transform: uppercase
+														letter-spacing: 0.32px
+														padding-left: 18px
+														padding-top: 25px
+														padding-bottom: 20px
+
+									.bottom
+										display: block
+										.bottom-left
+											display: block
+											position: absolute
+											width: 	80px
+											height: 80px
+											border-bottom: 8px solid #ffffff
+											border-left: 8px solid #ffffff
+											left: 0
+											bottom: 0
+										#callback-btn
+											float: right
+											display: block
+											width: 203px
+											height: 51px
+											box-shadow: 0 0 6px rgba(19, 43, 55, 0.25)
+											background-color: #ffffff
+											margin-right: 93px
+											margin-bottom: 36px
+											cursor: pointer
+											color: #333333
+											+fz(11)
+											+lh(11, 51)
+											font-weight: 900
+											text-transform: uppercase
+											letter-spacing: 1.1px
+											+tr(300ms)
+											&:hover
+												background-color: #333333
+												color: #ffffff
+												border: 1px solid #ffffff
+
+										.bottom-right
+											display: block
+											position: absolute
+											width: 	80px
+											height: 80px
+											border-bottom: 8px solid #ffffff
+											border-right: 8px solid #ffffff
+											right: 0
+											bottom: 0
+
+						&.slide_05
+							.our-team
+								display: -webkit-flex
+								display: -moz-flex
+								display: -ms-flex
+								display: -o-flex
+								display: flex
+								justify-content: center
+								align-items: center
+								flex-direction: column
+								height: 819px
+								background: url(../images/team.svg) center center no-repeat
+								position: relative
+								.arrows-4
+									max-width: 1184px
+									height: 100%	
+									width: 100%
+									display: block
+									position: relative
+									+tr(300ms)
+									.top-left
+										display: block
+										position: absolute
+										width: 	80px
+										height: 80px
+										border-top: 8px solid #ffffff
+										border-left: 8px solid #ffffff
+										left: 0
+										top: 0
+										margin: 16px 0 0 16px
+									.top-right
+										display: block
+										position: absolute
+										width: 	80px
+										height: 80px
+										border-top: 8px solid #ffffff
+										border-right: 8px solid #ffffff
+										right: 0
+										top: 0
+										margin: 16px 16px 0 0
+		
+									.team-member
+										position: absolute
+										&.first
+											top: 37px
+											right: 104px
+											display: block
+											position: absolute
+											max-width: 400px
+											width: 100%
+											height: 320px
+											opacity: 0
+											&:hover
+												opacity: 1
+												background: rgba(0, 0, 0, .15)
+
+									.bottom-left
+										display: block
+										position: absolute
+										width: 	80px
+										height: 80px
+										border-bottom: 8px solid #ffffff
+										border-left: 8px solid #ffffff
+										left: 0
+										bottom: 0
+										margin: 0 0 16px 16px
+									.bottom-right
+										display: block
+										position: absolute
+										width: 	80px
+										height: 80px
+										border-bottom: 8px solid #ffffff
+										border-right: 8px solid #ffffff
+										right: 0
+										bottom: 0
+										margin: 0 16px 16px 0
+									
+								#our-team-btn
+									position: absolute
+									display: block
+									width: 210px
+									height: 58px
+									box-shadow: 0 0 6px rgba(19, 43, 55, 0.25)
+									background-color: #ffffff
+									cursor: pointer
+									color: #333333
+									+fz(11)
+									+lh(11, 58)
+									font-weight: 900
+									text-transform: uppercase
+									letter-spacing: 1.1px
+									margin-bottom: 17px
+									border: 1px solid #ffffff
+									+tr(300ms)
+									&:hover
+										background-color: #333333
+										color: #ffffff
+										border: 1px solid #ffffff
+
+						&.slide_06
+							#map
+								width: 100%
+								height: 819px
+							#callback-btn
+								display: block
+								position: absolute
+								right: 116px
+								bottom: 52px
+								width: 203px
+								height: 51px
+								box-shadow: 0 0 6px rgba(19, 43, 55, 0.25)
+								background-color: #ffffff
+								margin-right: 93px
+								margin-bottom: 36px
+								cursor: pointer
+								color: #333333
+								+fz(11)
+								+lh(11, 51)
+								font-weight: 900
+								text-transform: uppercase
+								letter-spacing: 1.1px
+								border: 1px solid #ffffff
+								+tr(300ms)
+								&:hover
+									background-color: #333333
+									color: #ffffff
+									border: 1px solid #ffffff
+
+
+
+
+									
+								
+
+footer
+	position: fixed
+	bottom: 0
+	width: 100%
+	z-index: 1000 			
+	.container-footer
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+		max-width: 1330px
+		padding: 0 84px
+		position: relative
+		margin: 0 auto
+		height: 68px
+		padding-bottom: 30px
+		.mail a
+			+fz(16)
+			font-weight: normal
+			font-style: normal
+			line-height: normal
+			letter-spacing: 0.7px
+			text-align: left
+			color: #ffffff
+			text-decoration: none		
+		.socials
+			display: block
+			position: relative
+			a
+				margin-left: 16px
+			a.youtube
+				display: inline-block
+				background: url(../images/youtube.png) 0 0 no-repeat
+				opacity: .5
+				width: 24px
+				height: 24px
+				+tr(300ms)
+				&:hover
+					opacity: 1
+					background-color: red
+
+			a.vk
+				display: inline-block
+				background: url(../images/vk.png) 0 0 no-repeat
+				opacity: .5
+				width: 24px
+				height: 24px
+				+tr(300ms)
+				&:hover
+					opacity: 1
+			a.fb
+				display: inline-block
+				background: url(../images/fb.png) 0 0 no-repeat
+				opacity: .5
+				width: 24px
+				height: 24px
+				+tr(300ms)
+				&:hover
+					opacity: 1
+					background-color: #fff
+
+#popup-callback-order
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	flex-direction: column
+	align-content: space-between
+	background-color: #ffffff
+	color: #000000
+	position: fixed
+	opacity: 0
+	visibility: hidden
+	max-width: 1184px
+	width: 100%
+	z-index: 9999
+	+tr(300ms)
+	.top
+		display: block
+		height: 98px
+		.top-left
+			display: block
+			position: absolute
+			width: 	80px
+			height: 80px
+			border-top: 8px solid #393434
+			border-left: 8px solid #393434
+			left: 0
+			top: 0
+			margin: 16px 0 0 16px				
+		.top-right
+			.close
+				display: block
+				position: absolute
+				width: 	68px
+				height: 68px
+				right: 0
+				top: 0
+				margin: 16px 16px 0 0
+				background: url(../images/close.png) no-repeat
+				cursor: pointer
+	.middle
+		h3
+			+fz(20)
+			font-weight: 900
+			letter-spacing: 1.2px
+			+lh(20, 32)
+			text-transform: uppercase
+			text-align: center
+			margin-top: 114px
+		p
+			font-weight: 300
+			letter-spacing: 0.96px
+			+lh(16, 32)
+			text-align: center
+			margin-bottom: 50px
+		form
+			display: block
+			max-width: 384px
+			width: 100%
+			text-align: center
+			input[type="text"]
+				border: 0
+				border-bottom: 1px solid #2d2c29
+				background: none
+				display: block
+				outline: 0
+				width: 100%
+				color: #333333
+				+fz(16)
+				font-weight: 400
+				+lh(16,24)
+				letter-spacing: 0.96px
+				padding-bottom: 13px
+			input[type='text']::-webkit-input-placeholder
+				/* Chrome/Opera/Safari */
+				opacity: .35
+			input[type='text']::-moz-placeholder 
+				/* Firefox 19+ */
+				opacity: .35
+			input[type='text']:-ms-input-placeholder 
+				/* IE 10+ */
+				opacity: .35
+			input[type='text']:-moz-placeholder 
+				/* Firefox 18- */
+				opacity: .35
+
+
+			input[type="email"]
+				border: 0
+				border-bottom: 1px solid #2d2c29
+				background: none
+				display: block
+				outline: 0
+				width: 100%
+				color: #333333
+				+fz(16)
+				font-weight: 400
+				+lh(16,24)
+				letter-spacing: 0.96px
+				padding-bottom: 13px
+				margin-top: 37px
+			input[type='email']::-webkit-input-placeholder
+				/* Chrome/Opera/Safari */
+				opacity: .35
+			input[type='email']::-moz-placeholder 
+				/* Firefox 19+ */
+				opacity: .35
+			input[type='email']:-ms-input-placeholder 
+				/* IE 10+ */
+				opacity: .35
+			input[type='email']:-moz-placeholder 
+				/* Firefox 18- */
+				opacity: .35
+
+			select
+				width: 100%
+				border: 0
+				border-bottom: 1px solid #2d2c29
+				background: none
+				display: block
+				outline: 0
+				width: 100%
+				color: #333333
+				+fz(16)
+				font-weight: 400
+				+lh(16,24)
+				letter-spacing: 0.96px
+				padding-bottom: 13px
+				margin-top: 37px
+				margin-bottom: 60px
+
+			input[type='submit']
+				width: 203px
+				height: 51px
+				background-color: #313030
+				color: #ffffff
+				+fz(11)
+				font-weight: 900
+				text-transform: uppercase
+				letter-spacing: 1.1px
+				border: 0
+				margin-bottom: 66px
+				+tr(300ms)
+				&:hover
+					background-color: #ffffff
+					color: #313030
+					border: 1px solid #313030
+		
+	.bottom
+		display: block
+		height: 98px
+		.bottom-left
+			display: block
+			position: absolute
+			width: 	80px
+			height: 80px
+			border-bottom: 8px solid #393434
+			border-left: 8px solid #393434
+			left: 0
+			bottom: 0
+			margin: 0 0 16px 16px				
+		.bottom-right
+			display: block
+			position: absolute
+			width: 	80px
+			height: 80px
+			border-bottom: 8px solid #393434
+			border-right: 8px solid #393434
+			right: 0
+			bottom: 0
+			margin: 0 16px 16px 0
+
+
+
+#popup-menu
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	flex-direction: column
+	align-content: space-between
+	background-color: #ffffff
+	color: #000000
+	position: fixed
+	opacity: 0
+	visibility: hidden
+	max-width: 1184px
+	width: 100%
+	z-index: 9999
+	+tr(300ms)
+	.top
+		display: block
+		height: 98px
+		.top-left
+			display: block
+			position: absolute
+			width: 	80px
+			height: 80px
+			border-top: 8px solid #393434
+			border-left: 8px solid #393434
+			left: 0
+			top: 0
+			margin: 16px 0 0 16px				
+		.top-right
+			.close
+				display: block
+				position: absolute
+				width: 	68px
+				height: 68px
+				right: 0
+				top: 0
+				margin: 16px 16px 0 0
+				background: url(../images/close.png) no-repeat
+				cursor: pointer
+	.middle
+		height: 621px
+		position: relative
+		.inside-wrap
+			position: relative
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-direction: column
+			.logo-menu
+				margin-top: 19px
+				max-width: 104px
+				width: 100%
+				margin-bottom: 526px
+				cursor: pointer
+			nav
+				position: absolute
+				top: 50%
+				margin-top: -137px
+				text-align: center
+				ul
+					list-style: none
+					margin: 0
+					padding: 0
+					li
+						margin-bottom: 67px
+						a
+							opacity: 0.5
+							color: #333333
+							+fz(20)
+							font-weight: 400
+							text-transform: uppercase
+							text-decoration: none
+							letter-spacing: 2px
+							+lh(20, 0)
+							+tr(150ms)
+							&:hover
+								+fz(24)
+								font-weight: 400
+								text-transform: uppercase
+								opacity: 1
+								letter-spacing: 2.4px
+		.phone-menu
+			display: block
+			margin-bottom: 22px
+			a
+				color: #333333
+				+fz(20)
+				font-weight: 700
+				text-decoration: none
+	.bottom
+		display: block
+		height: 98px
+		.bottom-left
+			display: block
+			position: absolute
+			width: 	80px
+			height: 80px
+			border-bottom: 8px solid #393434
+			border-left: 8px solid #393434
+			left: 0
+			bottom: 0
+			margin: 0 0 16px 16px				
+		.bottom-right
+			display: block
+			position: absolute
+			width: 	80px
+			height: 80px
+			border-bottom: 8px solid #393434
+			border-right: 8px solid #393434
+			right: 0
+			bottom: 0
+			margin: 0 16px 16px 0
+
+
+
+
+#popup-callback-order.show
+	visibility: visible
+	opacity: 1
+
+#popup-menu.show
+	visibility: visible
+	opacity: 1
+
+
+.fadeInRight
+	animation-delay: 1s
+
+.fadeInLeft
+	animation-delay: 2s
+
+.focusUp
+	max-width: 400px
+	width: 100%
+	height: 320px
+	top: 37px
+	right: 104px
+	display: block
+	position: absolute
+
+
+
+.mCS-projects.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+	background-color: #ffffff
+	width: 2px
+
+.mCS-projects.mCSB_scrollTools .mCSB_draggerRail
+	width: 1px
+	background-color: #ffffff
+	opacity: 0.5
+
+.mCS-projects.mCSB_scrollTools .mCSB_draggerContainer
+	left: -75px
+
+
+
+
+.mCS-text-about.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+	background-color: #383434
+	width: 2px
+
+.mCS-text-about.mCSB_scrollTools .mCSB_draggerRail
+	width: 1px
+	background-color: #383434
+	opacity: 0.1
+
+
+@import "header"
+@import "layout"
+@import "footer"
+@import "media" // Всегда в конце
