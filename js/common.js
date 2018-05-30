@@ -155,9 +155,16 @@ $(document).ready(function() {
 
 	/* ANIMATION................................................*/
 
-	$('.team-member').on('mouseover', function() {
-		$(this).parent().addClass('focusUp');
-	}).on('mouseout', function() {
-		$(this).parent().removeClass('focusUp');
+	$('.team-member').on('mouseover', function(e) {
+		console.log(e);
+		var div = e.target;
+		if($(this).has(e.target)){
+			$(this).parent().addClass('focusUp');
+		}
+	}).on('mouseout', function(e) {
+		console.log(e);
+		if(!$(this).has(e.target)){
+			$(this).parent().removeClass('focusUp');
+		}
 	});
 });
