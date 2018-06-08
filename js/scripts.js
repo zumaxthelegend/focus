@@ -86,10 +86,11 @@ $(document).ready(function() {
 		itemSelector: '.element-item',
 		columnWidth: '.element-item',
 		percentPosition: true,
-		gutter: 8
+		gutter: 0
 	});
 	$('.projects').mCustomScrollbar({
-		theme: "projects"
+		theme: "projects",
+		scrollbarPosition: "outside"
 	});
 	$('.text-about').mCustomScrollbar({
 		theme: "text-about"
@@ -130,29 +131,49 @@ $(document).ready(function() {
 		myMap = new ymaps.Map("map", {
 			center: [55.034676, 82.911659],
 			zoom: 16,
-			controls: ['default']
+			controls: []
 		});
 
+
 		myPlacemark = new ymaps.Placemark([55.034676, 82.911659], {
-			balloonContent: 'IM-group, разработка, продвижение'
+			balloonContentHeader: '<div class="container-map-top">' +
+								'<div class="top-left"></div>' +
+								'<div class="top-right"></div>' +
+							'</div>',
+			balloonContent: '<div class=container-map>' + 
+								'<h1>Контакты</h1>' + 
+								'<p>Пр. Димитрова, 7, офис, 807</p>' +
+								'<div class="contacts-map">'+
+									'<div class="tel-map">' +
+										'<a href="tel:+7(383)3830987">+7 (383) 383-09-87</a>' +
+									'</div>' +
+									'<div class="mail-map">' +
+										'<a href="mailto:mail@imgroup54.ru">mail@imgroup54.ru</a>' +
+									'</div>' +
+								'</div>' +
+								'<div class="socials-map">' +
+									'<a href="#" target="_blank" class="youtube"></a>' +
+									'<a href="#" target="_blank" class="vk"></a>' +
+									'<a href="#" target="_blank" class="fb"></a>' +
+								'</div>' +
+								'<p class="goodbye-text">Приходите к нам в гости!</p>' +
+							'</div>',
+			balloonContentFooter: '<div class="container-map-bottom">' +
+								'<div class="bottom-left"></div>' +
+								'<div class="bottom-right"></div>' +
+							'</div>'
 		}, {
-			balloonContentSize: [387, 287],
-			balloonLayout: "default#imageWithContent",
-			balloonImageHref: 'images/balloon-bg.png',
-			balloonImageSize: [416, 316],
-			balloonShadow: false
+			balloonMaxWidth : 416,
+			balloonOffset:[-150, 150],
+			iconLayout: 'default#image',
+			iconImageHref: 'images/F-logo-map.png',
+			iconImageSize: [56, 69],
+			iconImageOffset: [-30,-70]
 		});
 
 		myMap.geoObjects.add(myPlacemark);
-
-		myMap.geoObject.events.add([
-			'balloonopen'
-			], function(e) {
-				var geoObject = e.get('target');
-				myMap.panTo(geoObject.geometry.getCoordinates(), {
-					delay: 0
-				});
-			});
+		myMap.controls.add('zoomControl');
+		myMap.behaviors.disable('scrollZoom');
 	}
 
 
@@ -161,19 +182,76 @@ $(document).ready(function() {
 
 	$('#callback-btn, #order-btn').on("click", function() {
 		$('#popup-callback-order').toggleClass('show');
+
+		if($('body .top-block').hasClass('top-block_active')) {
+			$('body .top-block').removeClass('top-block_active');
+		} else {
+			setTimeout(function(){
+				$('body .top-block').addClass('top-block_active');
+			}, 500);
+		}
+		if($('body .right-block').hasClass('right-block_active')) {
+			$('body .right-block').removeClass('right-block_active');
+		} else {
+			setTimeout(function(){
+				$('body .right-block').addClass('right-block_active');	
+			}, 500);
+		}
 	});
 	$('.close').on("click", function() {
 		$('#popup-callback-order').removeClass('show');
+		$('.top-block').removeClass('top-block_active');
+		$('.right-block').removeClass('right-block_active');
 	});
 
 
 	$('.burger').on("click", function() {
 		$('#popup-menu').toggleClass('show');
+		
+		if($('body .top-block').hasClass('top-block_active')) {
+			$('body .top-block').removeClass('top-block_active');
+		} else {
+			setTimeout(function(){
+				$('body .top-block').addClass('top-block_active');
+			}, 500);
+		}
+		if($('body .right-block').hasClass('right-block_active')) {
+			$('body .right-block').removeClass('right-block_active');
+		} else {
+			setTimeout(function(){
+				$('body .right-block').addClass('right-block_active');	
+			}, 500);
+		}
 	});
 	$('.close').on("click", function() {
 		$('#popup-menu').removeClass('show');
+		$('.top-block').removeClass('top-block_active');
+		$('.right-block').removeClass('right-block_active');
 	});
 
+	$('.input-dropdawn').on('click', function() {
+		$('.input-dropdawn').not(this).removeClass('active');
+		if ( !$(this).hasClass('active') ) {
+			$(this).addClass('active');
+		} else {
+			$(this).removeClass('active');
+			}
+		});
+
+		$('.input-dropdawn li').on('click', function() {
+			var valDrop = $(this).attr('data-val');
+			var htmlDrop = $(this).html();
+
+		$(this).addClass('active').siblings('li').removeClass('active');
+		$(this).closest('.input-dropdawn').find('div').html(htmlDrop);
+		$(this).closest('.input-dropdawn').find('input').val(valDrop);
+
+		if($(this).closest('.input-dropdawn').find('input[type="hidden"]').val() != '') {
+			$(this).closest('.input-dropdawn').addClass('selected');
+		} else {
+			$(this).closest('.input-dropdawn').removeClass('selected');
+		}
+	});
 
 	/* PHONE-MASK................................................*/
 
@@ -190,21 +268,75 @@ $(document).ready(function() {
 		$('.slider').slick('slickGoTo', slidenum - 1);
 		$('#popup-menu').removeClass('show');
 		$('.burger').removeClass('show');
+		$('.top-block').removeClass('top-block_active');
+		$('.right-block').removeClass('right-block_active');
 	});
 
 
 	/* ANIMATION................................................*/
 
-	$('.team-member').on('mouseover', function(e) {
-		console.log(e);
-		var div = e.target;
-		if($(this).has(e.target)){
-			$(this).parent().addClass('focusUp');
-		}
-	}).on('mouseout', function(e) {
-		console.log(e);
-		if(!$(this).has(e.target)){
-			$(this).parent().removeClass('focusUp');
-		}
+	$('.member').on('mouseover', function() {
+		var x = parseInt($(this).attr('x'));
+		var y =  parseInt($(this).attr('y'));
+		var height = parseInt($(this).attr('height'));
+		var width = parseInt($(this).attr('width'));
+		$('#pixelate').animate({'opacity': 1}, 300);
+		$('#face rect, #arrows').animate({
+			'x' : x,
+			'y' : y,
+			'height' : height,
+			'width' : width
+		}, 300);
+		$('#left-top').animate({
+			'x' : x-24,
+			'y' : y-24
+		}, 300);
+		$('#right-top').animate({
+			'x' : x + width - 56,
+			'y' : y-24
+		}, 300);
+		$('#left-bottom').animate({
+			'x' : x-24,
+			'y' : y + height - 56
+		}, 300);
+		$('#right-bottom').animate({
+			'x' : x + width - 56,
+			'y' : y + height - 56
+		}, 300);
 	});
+	$('.member').on('mouseout', function() {
+		$('#pixelate').animate({'opacity': 0}, 300);
+		$('#face rect, #arrows').animate({
+			'x' : 0,
+			'y' : 0,
+			'height' : '100%',
+			'width' : '100%'
+		}, 300);
+
+		$('#left-top').animate({
+			'x' : 16,
+			'y' : 16
+		}, 300);
+		$('#right-top').animate({
+			'x' : 1088,
+			'y' : 16
+		}, 300);
+		$('#left-bottom').animate({
+			'x' : 16,
+			'y' : 688
+		}, 300);
+		$('#right-bottom').animate({
+			'x' : 1088,
+			'y' : 688
+		}, 300);
+	});
+
+	/* PROJECTS_HOVER................................................*/
+
+/*	$(".element-item").on("mouseover", function(){
+		$(".element-item").toggleClass("is-blurred");
+	});
+	$(".element-item").on("mouseout", function(){
+		$(".element-item").removeClass("is-blurred");
+	});*/
 });
