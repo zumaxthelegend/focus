@@ -59,8 +59,13 @@ $(document).ready(function() {
 		$preloader = $('#preloader'),
 		$preloaderContent = $preloader.find('.preloader-content');
 		setTimeout(function() {
+			$('.f-wrapper').addClass('scaled');
+		}, 0);
+		setTimeout(function() {
 			$preloader.fadeOut();
-		}, 1500);
+		}, 3000);
+
+
 	});
 
 
@@ -74,7 +79,7 @@ $(document).ready(function() {
 		speed: 400,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		speed: 1300,
+		speed: 700,
 		appendArrows: '.slider-nav',
 		prevArrow: '.left',
 		nextArrow: '.right',

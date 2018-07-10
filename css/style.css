@@ -8572,8 +8572,84 @@ body {
 #preloader .preloader-content {
   width: 100%;
   height: 100%;
-  background: url("../images/preloader.gif") no-repeat center center;
-  background-color: #231f20;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+}
+
+#preloader .preloader-content .f-wrapper {
+  display: block;
+  position: relative;
+  width: 126px;
+  height: 276px;
+}
+
+#preloader .preloader-content .f-wrapper .f-block-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 84px;
+  height: 99px;
+  background: url(../images/f.png) center center no-repeat;
+  z-index: 5;
+}
+
+#preloader .preloader-content .f-wrapper .f-block-2 {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  display: block;
+  width: 84px;
+  height: 99px;
+  background: url(../images/f.png) center center no-repeat;
+  z-index: 5;
+}
+
+#preloader .preloader-content .f-wrapper .f-block-3 {
+  position: absolute;
+  top: 127px;
+  left: 0;
+  display: block;
+  width: 84px;
+  height: 99px;
+  background: url(../images/f.png) center center no-repeat;
+  z-index: 4;
+}
+
+#preloader .preloader-content .f-wrapper .f-block-4 {
+  position: absolute;
+  top: 179px;
+  left: 0;
+  display: block;
+  width: 84px;
+  height: 99px;
+  background: url(../images/f.png) center center no-repeat;
+  z-index: 3;
+}
+
+#preloader .preloader-content .f-wrapper .f-block-5 {
+  position: absolute;
+  top: 102px;
+  right: -1px;
+  display: block;
+  width: 84px;
+  height: 99px;
+  background: url(../images/f.png) center center no-repeat;
+  z-index: 2;
 }
 
 .site {
@@ -11545,13 +11621,47 @@ footer .container .socials a.fb:hover {
 }
 
 .fadeInRight {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
 }
 
 .fadeInLeft {
-  -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.f-block-3.zoomIn {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.f-block-2.zoomInLeft {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.f-block-5.zoomInRight {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.f-block-4.zoomInLeft {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.f-block-1.zoomInDown {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.scaled {
+  -webkit-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all 10s linear;
+  -o-transition: all 10s linear;
+  transition: all 10s linear;
 }
 
 #member-1 {

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1384">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+	
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+	<!--<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>-->
+
+</head>
+
+<body>
+	<div id="preloader">
+		<div class="preloader-content">
+			<div class="f-wrapper">
+				<div class="f-block-1 animated zoomInDown"></div>
+				<div class="f-block-2 animated zoomInLeft"></div>
+				<div class="f-block-3 animated zoomIn"></div>
+				<div class="f-block-4 animated zoomInLeft"></div>
+				<div class="f-block-5 animated zoomInRight"></div>
+			</div>
+		</div>
+	</div>
+	<div class="site">
+		@include('parts/header.html')
+
+		<div class="site-primary">
+			<main class="site-content">
+				<div class="slider">
+					<div class="slide slide_01" id="slide_01">
+						<div class="wrapper">
+							<div class="second-wrapper">
+								<div class="container">
+									<div class="row justify-content-center">
+										<div class="col-12">
+											<div class="welcome-screen">
+												<div class="top">
+													<div class="top-left"></div>
+														<p class="animated fadeInRight">Фокусируемся на задачах вашего бизнеса</p>
+													<div class="top-right"></div>
+												</div>
+												<div class="middle">
+													<img src="../images/logo-big.png" alt="">
+												</div>
+												<div class="bottom">
+													<div class="bottom-left"></div>
+														<p class="animated fadeInLeft">и решаем их с помощью <a href="#" data-slide="4"><span>digital инструментов</span></a></p>
+													<div class="bottom-right"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide slide_02" id="slide_02">
+						<div class="wrapper">
+							<div class="second-wrapper">
+								<div class="container">
+									<div class="row">
+										<div class="col-12">
+											<div class="projects">
+												<div class="elements-grid">
+													<a href="../images/RDS.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/RDS.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/RDS(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left-1"></span>
+																<span class="top-right-1"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left-1"></span>
+																<span class="bottom-right-1"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/krovliSibiri.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/krovliSibiri.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/krovliSibiri(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/LucaPacioli.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/LucaPacioli.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/LucaPacioli(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left-3"></span>
+																<span class="top-right-3"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left-3"></span>
+																<span class="bottom-right-3"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/yaZdorova.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/yaZdorova.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/yaZdorova(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left-4"></span>
+																<span class="top-right-4"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left-4"></span>
+																<span class="bottom-right-4"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/pravDesert.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/pravDesert.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/pravDesert(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/guruTuning.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/guruTuning.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/guruTuning(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/akdReklami.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/akdReklami.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/akdReklami(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/melissa.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/melissa.png" alt=""></span>
+														<span class="image-container-hover"><img src="../images/melissa(hover).png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left-8"></span>
+																<span class="top-right-8"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left-8"></span>
+																<span class="bottom-right-8"></span>
+															</span>
+														</span>
+													</a>
+													<!-- <a href="../images/gallery-1.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-1.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/gallery-2.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-2.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/gallery-3.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-3.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/gallery-4.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-4.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/gallery-5.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-5.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/gallery-6.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-6.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/gallery-7.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-7.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a>
+													<a href="../images/gallery-8.png" data-fancybox="gallery" class="element-item">
+														<span class="image-container"><img src="../images/gallery-8.png" alt=""></span>
+														<span class="project-about">
+															<span class="top">
+																<span class="top-left"></span>
+																<span class="top-right"></span>
+															</span>
+															<span class="bottom">
+																<span class="bottom-left"></span>
+																<span class="bottom-right"></span>
+															</span>
+														</span>
+													</a> -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>  
+					</div>
+					<div class="slide slide_03" id="slide_03">
+						<div class="wrapper">
+							<div class="second-wrapper">
+								<div class="container">
+									<div class="about-us">
+										<div class="row justify-content-center">
+											<div class="col-8">
+												<div class="row">
+													<div class="col-3">
+														<div class="image">
+															<img src="../images/F-logo.png" alt="">
+														</div>
+													</div>
+														<div class="col-9">
+															<div class="text-about">
+																<h2>Мы заставим интернет работать на Вас.</h2>
+																<p>IM-Group – агентство интернет-маркетинга из Новосибирска, мы занимаемся 
+																тем, что помогаем людям в интернете найти Вашу компанию и повысить узнаваемость.
+
+																На сегодняшний день очень много компаний, которые вообще не представлены в интернете. Все потому, что не все понимают весь потенциал, скрывающийся в сети, а именно тысячи потенциальных клиентов, 
+																которые в данную секунду ищут продукт или услугу, аналогичную Вашей и заказывают ее у Ваших конкурентов!
+
+																Нужно оставаться экспертом в своей сфере и чтобы получить максимум от рекламы в интернете, нужно обращаться к профессионалам. В нашей команде, каждый человек отвечает за одно, поэтому Вы получаете максимум из каждого канала.
+
+																Мы помогаем получать клиентов из Интернета, а так же увеличиваем их количество.
+																IM-Group – агентство интернет-маркетинга из Новосибирска, мы занимаемся 
+																тем, что помогаем людям в интернете найти Вашу компанию и повысить узнаваемость.
+
+																На сегодняшний день очень много компаний, которые вообще не представлены в интернете. Все потому, что не все понимают весь потенциал, скрывающийся в сети, а именно тысячи потенциальных клиентов, 
+																которые в данную секунду ищут продукт или услугу, аналогичную Вашей и заказывают ее у Ваших конкурентов!
+
+																Нужно оставаться экспертом в своей сфере и чтобы получить максимум от рекламы в интернете, нужно обращаться к профессионалам. В нашей команде, каждый человек отвечает за одно, поэтому Вы получаете максимум из каждого канала.
+
+																Мы помогаем получать клиентов из Интернета, а так же увеличиваем их количество.
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide slide_04" id="slide_04">
+						<div class="wrapper">
+							<div class="second-wrapper">
+								<div class="container">
+									<div class="row">
+										<div class="col-12 blur-bg">
+											<div class="development">
+												<div class="top">
+													<div class="top-left"></div>
+													<h5>Мы разрабатываем различные визуальные образы и концепции, которые подойдут 
+													именно вашей компании в тот период её развития. когда это максимально 
+													необходимо и отражает всю суть!</h5>
+													<div class="top-right"></div>
+												</div>
+												<div class="middle">
+													<div class="row justify-content-center">
+														<div class="col-10">
+															<div class="dev-columns">
+																<div class="column-1">
+																	<div class="site-dev">
+																		<div class="title">Разработка<br>сайтов</div>
+																		<ul>
+																			<li><a href="#">Лендинги</a></li>
+																			<li><a href="#">Визитки</a></li>
+																			<li><a href="#">Корпоративные сайты</a></li>
+																			<li><a href="#">Интернет магазины</a></li>
+																		</ul>
+																	</div>
+																	<div class="smm">
+																		<div class="title">SMM</div>
+																	</div>
+																	<div class="seo">
+																		<div class="title">SEO</div>
+																		<ul>
+																			<li><a href="#">Аудит</a></li>
+																			<li><a href="#">по трафику</a></li>
+																			<li><a href="#">по позициям</a></li>
+																			<li><a href="#">разовая стимуляция</a></li>
+																			<li><a href="#">Аналитика</a></li>
+																		</ul>
+																	</div>
+																</div>
+																<div class="column-2">
+																	<div class="design">
+																		<div class="title">Дизайн</div>
+																		<ul>
+																			<li><a href="#">Логотипы</a></li>
+																			<li><a href="#">Фирменный стиль</a></li>
+																			<li><a href="#">Гайдлайн</a></li>
+																			<li><a href="#">Брендбук</a></li>
+																			<li><a href="#">Рекламная иллюстрация</a></li>
+																		</ul>
+																	</div>
+																	<div class="target-ads">
+																		<div class="title">Таргетированная<br>реклама</div>
+																		<ul>
+																			<li><a href="#">Vkontakte</a></li>
+																			<li><a href="#">Facebook</a></li>
+																			<li><a href="#">Instagram</a></li>
+																			<li><a href="#">My target</a></li>
+																		</ul>
+																	</div>
+																	<div class="mobile-ads">
+																		<div class="title">Мобильная<br>реклама</div>
+																	</div>
+																</div>
+																<div class="column-3">
+																	<div class="contexts-ads">
+																		<div class="title">Контекстна<br>реклама</div>
+																		<ul>
+																			<li><a href="#">Яндекс директ</a></li>
+																			<li><a href="#">Google Awards</a></li>
+																			<li><a href="#">Аудит контекстной рекламы</a></li>
+																			<li><a href="#">Ретаргетинг</a></li>
+																			<li><a href="#">Я Маркет</a></li>
+																		</ul>
+																	</div>
+																	<div class="banners-ads">
+																		<div class="title">Медийно-баннерная<br>реклама</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bottom">
+													<div class="bottom-left"></div>
+													<!-- <div id="callback-btn">Связаться с нами</div> -->
+													<div class="bottom-right"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide slide_05" id="slide_05">
+						<div class="wrapper">
+							<div class="second-wrapper">
+								<div class="container">
+									<div class="row">
+										<div class="col-12">
+											<div class="our-team">
+												<svg xmlns="http://www.w3.org/2000/svg" id="banner" height="784" width="1184" viewBox="0 0 1184 784">
+													<image xlink:href="images/our-team-bg-pixelate.jpg" id="pixelate" x="0" y="0" height="784" width="1184"  />
+													<image xlink:href="images/our-team-bg.jpg" id="original" x="0" y="0" height="784" width="1184" clip-path="url(#face)"  />
+													<g id="arrows">
+														<image xlink:href="images/left-top.png" id="left-top" x="0" y="0" width="80" heigth="80" />
+														<image xlink:href="images/right-top.png" id="right-top" x="1104" y="0" width="80" heigth="80" />
+														<image xlink:href="images/left-bottom.png" id="left-bottom" x="0" y="704" width="80" heigth="80" />
+														<image xlink:href="images/right-bottom.png" id="right-bottom" x="1104" y="704" width="80" heigth="80" />
+													</g>
+													<rect  class="member" id="member-1" x="712" y="37" width="400" height="320" fill="transparent" /> 
+													<clipPath id="face">
+														<rect width="100%" height="100%" x="0" y="0" />
+													</clipPath>
+												</svg>
+												<div id="our-team-btn">О команде</div>
+												<div class="table-wrap">
+													<ul class="team">
+														<li><a href="#">Дизайнеры</a></li>
+														<li><a href="#">Верстальщики</a></li>
+														<li><a href="#">Маркетологи</a></li>
+														<li><a href="#">Крутые перцы</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide slide_06" id="slide_06">
+						<div class="wrapper">
+							<div class="second-wrapper">
+								<div class="container">
+									<div class="row">
+										<div class="col-12">
+											<div class="contacts">
+												<div id="map"></div>
+												<!-- <div id="callback-btn">Связаться с нами</div> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		<div class="slider-nav">
+			<div class="arrows">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+		</div>
+		<div class="dots">
+			<p>Название слайда</p>
+			<div class="slider-dots"></div>
+		</div>
+		</div>
+		@include('parts/footer.html')
+	</div>
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/scripts.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</body>
+</html>
+
