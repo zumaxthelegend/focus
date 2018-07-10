@@ -53,6 +53,17 @@ $(document).ready(function() {
  //        else{$.fn.fullpage.moveSlideLeft();}
 	//  });
 
+	/* PRELOADER.............................................*/
+
+	$(window).on('load', function(){
+		$preloader = $('#preloader'),
+		$preloaderContent = $preloader.find('.preloader-content');
+		setTimeout(function() {
+			$preloader.fadeOut();
+		}, 1500);
+	});
+
+
 	/* SLIDER................................................*/
 
 
@@ -63,12 +74,13 @@ $(document).ready(function() {
 		speed: 400,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		speed: 1000,
+		speed: 1300,
 		appendArrows: '.slider-nav',
 		prevArrow: '.left',
 		nextArrow: '.right',
 		appendDots: '.slider-dots',
-		focusOnSelect: false
+		focusOnSelect: false,
+		cssEase: 'cubic-bezier(.19,.1,.63,1.03)'
 
 	});
 
@@ -135,7 +147,7 @@ $(document).ready(function() {
 		});
 
 
-		myPlacemark = new ymaps.Placemark([55.034676, 82.911659], {
+		myPlacemark = new ymaps.Placemark([55.034676, 82.917659], {
 			balloonContentHeader: '<div class="container-map-top">' +
 								'<div class="top-left"></div>' +
 								'<div class="top-right"></div>' +
@@ -174,6 +186,8 @@ $(document).ready(function() {
 		myMap.geoObjects.add(myPlacemark);
 		myMap.controls.add('zoomControl');
 		myMap.behaviors.disable('scrollZoom');
+		myMap.behaviors.disable('drag');
+		myMap.behaviors.disable('multiTouch');
 	}
 
 
@@ -204,6 +218,20 @@ $(document).ready(function() {
 		$('.right-block').removeClass('right-block_active');
 	});
 
+	/*$('body').on("click", function() {
+		if($('#popup-menu') || $('#popup-callback-order')).hasClass('show') {
+			$('#popup-callback-order').toggleClass('show');
+		}	
+	});*/
+
+	$(document).mouseup(function(e) {
+	  //Выпадающие списки
+	if( $(event.target).closest('#popup-menu, #popup-callback-order').length ) return;
+		$('#popup-menu, #popup-callback-order').removeClass('show');
+		$('.top-block').removeClass('top-block_active');
+		$('.right-block').removeClass('right-block_active');
+	event.stopPropagation();
+	 });
 
 	$('.burger').on("click", function() {
 		$('#popup-menu').toggleClass('show');
@@ -228,6 +256,15 @@ $(document).ready(function() {
 		$('.top-block').removeClass('top-block_active');
 		$('.right-block').removeClass('right-block_active');
 	});
+
+	$(document).keydown(function(event) { 
+		if (event.keyCode == 27) { 
+	    	$('#popup-menu, #popup-callback-order').removeClass('show');
+	    	$('.top-block').removeClass('top-block_active');
+			$('.right-block').removeClass('right-block_active');
+		}
+	});
+
 
 	$('.input-dropdawn').on('click', function() {
 		$('.input-dropdawn').not(this).removeClass('active');
@@ -292,16 +329,16 @@ $(document).ready(function() {
 			'y' : y-24
 		}, 300);
 		$('#right-top').animate({
-			'x' : x + width - 56,
+			'x' : x + width - 40,
 			'y' : y-24
 		}, 300);
 		$('#left-bottom').animate({
 			'x' : x-24,
-			'y' : y + height - 56
+			'y' : y + height - 40
 		}, 300);
 		$('#right-bottom').animate({
-			'x' : x + width - 56,
-			'y' : y + height - 56
+			'x' : x + width - 40,
+			'y' : y + height - 40
 		}, 300);
 	});
 	$('.member').on('mouseout', function() {
@@ -318,25 +355,39 @@ $(document).ready(function() {
 			'y' : 16
 		}, 300);
 		$('#right-top').animate({
-			'x' : 1088,
+			'x' : 1104,
 			'y' : 16
 		}, 300);
 		$('#left-bottom').animate({
 			'x' : 16,
-			'y' : 688
+			'y' : 704
 		}, 300);
 		$('#right-bottom').animate({
-			'x' : 1088,
-			'y' : 688
+			'x' : 1104,
+			'y' : 704
 		}, 300);
 	});
 
-	/* PROJECTS_HOVER................................................*/
 
-/*	$(".element-item").on("mouseover", function(){
-		$(".element-item").toggleClass("is-blurred");
+	/* PROJECTS.......................................................*/
+
+
+
+	$('a.element-item').on('mouseover', function(e) {
+		var self = $(this);
+		$('a.element-item .image-container img').addClass('blurred');
+		self.find('.image-container').removeClass('blurred');
+		self.find('.image-container').css({opacity: '0'});
+		self.find('.image-container-hover').css({opacity: '1'});
+		$('a.element-item').addClass('block');
+
 	});
-	$(".element-item").on("mouseout", function(){
-		$(".element-item").removeClass("is-blurred");
-	});*/
+
+	$('a.element-item').on('mouseout', function() {
+		var self = $(this);
+		$('a.element-item .image-container img').removeClass('blurred');
+		self.find('.image-container').css({opacity: '1'});
+		self.find('.image-container-hover').css({opacity: '0'});
+		$('a.element-item').removeClass('block');
+	});
 });

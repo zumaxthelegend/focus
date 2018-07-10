@@ -8559,6 +8559,23 @@ body {
   height: 100%;
 }
 
+#preloader {
+  position: fixed;
+  z-index: 100000;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#preloader .preloader-content {
+  width: 100%;
+  height: 100%;
+  background: url("../images/preloader.gif") no-repeat center center;
+  background-color: #231f20;
+}
+
 .site {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9028,7 +9045,7 @@ header #order-btn:hover.services {
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen {
-  height: 584px;
+  height: 740px;
   display: block;
   position: relative;
   display: -webkit-flex;
@@ -9049,7 +9066,7 @@ header #order-btn:hover.services {
   position: absolute;
   top: 0;
   height: 84px;
-  max-width: 984px;
+  max-width: 1200px;
   width: 100%;
 }
 
@@ -9057,8 +9074,8 @@ header #order-btn:hover.services {
   position: absolute;
   width: 84px;
   height: 84px;
-  border-top: 32px solid #ffffff;
-  border-left: 32px solid #ffffff;
+  border-top: 24px solid #ffffff;
+  border-left: 24px solid #ffffff;
   top: 0;
   left: 0;
 }
@@ -9079,8 +9096,8 @@ header #order-btn:hover.services {
   position: absolute;
   width: 84px;
   height: 84px;
-  border-top: 32px solid #ffffff;
-  border-right: 32px solid #ffffff;
+  border-top: 24px solid #ffffff;
+  border-right: 24px solid #ffffff;
   top: 0;
   right: 0;
 }
@@ -9088,8 +9105,12 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .middle {
   display: block;
   width: 100%;
-  max-width: 757px;
+  max-width: 900px;
   margin: 0 auto;
+}
+
+.site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .middle img {
+  width: 900px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .bottom {
@@ -9097,7 +9118,7 @@ header #order-btn:hover.services {
   position: absolute;
   bottom: 0;
   height: 84px;
-  max-width: 984px;
+  max-width: 1200px;
   width: 100%;
 }
 
@@ -9105,8 +9126,8 @@ header #order-btn:hover.services {
   position: absolute;
   width: 84px;
   height: 84px;
-  border-bottom: 32px solid #ffffff;
-  border-left: 32px solid #ffffff;
+  border-bottom: 24px solid #ffffff;
+  border-left: 24px solid #ffffff;
   bottom: 0;
   left: 0;
 }
@@ -9114,7 +9135,7 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .bottom p {
   font-size: 1.4375em;
   font-weight: 300;
-  line-height: normal;
+  line-height: 1em;
   letter-spacing: 0.5px;
   text-align: left;
   color: #ffffff;
@@ -9126,16 +9147,24 @@ header #order-btn:hover.services {
   margin: 0;
 }
 
-.site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .bottom p span {
+.site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .bottom a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  outline: 0;
+}
+
+.site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .bottom a span {
   text-decoration: underline;
+  color: #ffffff;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_01 .welcome-screen .bottom .bottom-right {
   position: absolute;
   width: 84px;
   height: 84px;
-  border-bottom: 32px solid #ffffff;
-  border-right: 32px solid #ffffff;
+  border-bottom: 24px solid #ffffff;
+  border-right: 24px solid #ffffff;
   bottom: 0;
   right: 0;
 }
@@ -9152,9 +9181,7 @@ header #order-btn:hover.services {
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_02 .projects .elements-grid .element-item {
-  margin-bottom: 8px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
   width: 33.3333%;
   display: block;
   overflow: hidden;
@@ -9166,29 +9193,53 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_02 .projects .elements-grid .element-item .image-container {
   display: block;
   overflow: hidden;
+  opacity: 1;
+  -webkit-transition: 0.3s all linear;
+  -o-transition: 0.3s all linear;
+  transition: 0.3s all linear;
 }
 
-.site .site-primary .site-content .slider .slick-list .slide.slide_02 .projects .elements-grid .element-item .image-container img {
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-  -webkit-transition: -webkit-filter 300ms linear;
-  transition: -webkit-filter 300ms linear;
-  -o-transition: filter 300ms linear;
-  transition: filter 300ms linear;
-  transition: filter 300ms linear, -webkit-filter 300ms linear;
+.site .site-primary .site-content .slider .slick-list .slide.slide_02 .projects .elements-grid .element-item .image-container-hover {
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: 0.3s all linear;
+  -o-transition: 0.3s all linear;
+  transition: 0.3s all linear;
+  opacity: 0;
+  overflow: hidden;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_02 .projects .elements-grid .element-item::before {
   content: "";
   display: block;
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 4px;
+  bottom: 4px;
   left: 4px;
   right: 4px;
   background: rgba(0, 0, 0, 0.65);
   z-index: 5;
+  opacity: 0;
+  -webkit-transition: 0.3s all linear;
+  -o-transition: 0.3s all linear;
+  transition: 0.3s all linear;
+}
+
+.site .site-primary .site-content .slider .slick-list .slide.slide_02 .projects .elements-grid .element-item.block::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  background: rgba(0, 0, 0, 0.65);
   opacity: 1;
+  z-index: 5;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_02 .projects .elements-grid .element-item:hover .project-about {
@@ -9379,11 +9430,6 @@ header #order-btn:hover.services {
   margin-right: 8px;
 }
 
-.site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development {
-  height: 100%;
-  width: 100%;
-}
-
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .top {
   display: block;
 }
@@ -9391,8 +9437,8 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .top .top-left {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #ffffff;
   border-left: 8px solid #ffffff;
   left: 24px;
@@ -9416,8 +9462,8 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .top .top-right {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #ffffff;
   border-right: 8px solid #ffffff;
   right: 24px;
@@ -9509,7 +9555,7 @@ header #order-btn:hover.services {
   width: 9px;
   height: 12px;
   margin-left: 6px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .middle .dev-columns .column-1 .smm {
@@ -9607,7 +9653,7 @@ header #order-btn:hover.services {
   width: 9px;
   height: 12px;
   margin-left: 6px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .middle .dev-columns .column-2 {
@@ -9677,7 +9723,7 @@ header #order-btn:hover.services {
   width: 9px;
   height: 12px;
   margin-left: 6px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .middle .dev-columns .column-2 .target-ads {
@@ -9742,7 +9788,7 @@ header #order-btn:hover.services {
   width: 9px;
   height: 12px;
   margin-left: 6px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .middle .dev-columns .column-2 .mobile-ads {
@@ -9845,7 +9891,7 @@ header #order-btn:hover.services {
   width: 9px;
   height: 12px;
   margin-left: 6px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .middle .dev-columns .column-3 .banners-ads {
@@ -9889,8 +9935,8 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .bottom .bottom-left {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #ffffff;
   border-left: 8px solid #ffffff;
   left: 24px;
@@ -9931,8 +9977,8 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_04 .blur-bg .development .bottom .bottom-right {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #ffffff;
   border-right: 8px solid #ffffff;
   right: 24px;
@@ -9940,12 +9986,13 @@ header #order-btn:hover.services {
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_05 .our-team {
-  height: 784px;
+  width: 100%;
   position: relative;
   z-index: 5;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_05 .our-team svg {
+  margin-top: 63px;
   width: 100%;
 }
 
@@ -9958,14 +10005,14 @@ header #order-btn:hover.services {
   position: relative;
   display: block;
   width: 210px;
-  height: 58px;
+  height: 48px;
   -webkit-box-shadow: 0 0 6px rgba(19, 43, 55, 0.25);
           box-shadow: 0 0 6px rgba(19, 43, 55, 0.25);
   background-color: #ffffff;
   cursor: pointer;
   color: #333333;
   font-size: 0.6875em;
-  line-height: 5.09091em;
+  line-height: 4.18182em;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.1px;
@@ -9996,6 +10043,7 @@ header #order-btn:hover.services {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: -20px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_05 .our-team .table-wrap .team {
@@ -10015,7 +10063,6 @@ header #order-btn:hover.services {
   width: 100%;
   margin: 0;
   padding: 0;
-  margin-top: 33px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_05 .our-team .table-wrap .team li {
@@ -10041,6 +10088,7 @@ header #order-btn:hover.services {
 .site .site-primary .site-content .slider .slick-list .slide.slide_06 #map {
   width: 100%;
   height: 816px;
+  margin-top: 20px;
 }
 
 .site .site-primary .site-content .slider .slick-list .slide.slide_06 #callback-btn {
@@ -10116,8 +10164,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .left-side .top .top-left {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #393434;
   border-left: 8px solid #393434;
   top: 0;
@@ -10190,8 +10238,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .left-side .bottom .bottom-left {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-left: 8px solid #393434;
   bottom: 0;
@@ -10230,8 +10278,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .right-side .top .top-right {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #393434;
   border-right: 8px solid #393434;
   top: 0;
@@ -10306,8 +10354,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .right-side .bottom .bottom-right {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-right: 8px solid #393434;
   bottom: 0;
@@ -10356,8 +10404,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .left-side .top .top-left {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #393434;
   border-left: 8px solid #393434;
   top: 0;
@@ -10430,8 +10478,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .left-side .bottom .bottom-left {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-left: 8px solid #393434;
   bottom: 0;
@@ -10470,8 +10518,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .right-side .top .top-right {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #393434;
   border-right: 8px solid #393434;
   top: 0;
@@ -10557,8 +10605,8 @@ header #order-btn:hover.services {
 
 .site .site-primary .services-wrapper .right-side .bottom .bottom-right {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-right: 8px solid #393434;
   bottom: 0;
@@ -10711,8 +10759,8 @@ footer .container .socials a.fb:hover {
 #popup-callback-order .top .top-left {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #393434;
   border-left: 8px solid #393434;
   left: 0;
@@ -10723,8 +10771,8 @@ footer .container .socials a.fb:hover {
 #popup-callback-order .top .top-right .close {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   right: 0;
   top: 0;
   margin: 16px 16px 0 0;
@@ -10736,7 +10784,7 @@ footer .container .socials a.fb:hover {
   position: absolute;
   top: 0;
   right: 0;
-  width: 80px;
+  width: 64px;
   display: block;
   background: #393434;
   -webkit-transition-property: -webkit-transform, top, right;
@@ -10749,12 +10797,12 @@ footer .container .socials a.fb:hover {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
-  top: 25px;
-  right: -10px;
+  top: 18px;
+  right: -3px;
 }
 
 #popup-callback-order .top .top-right .close .right-block {
-  height: 80px;
+  height: 64px;
   position: absolute;
   top: 0;
   right: 0;
@@ -10782,7 +10830,7 @@ footer .container .socials a.fb:hover {
   line-height: 1.6em;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 114px;
+  margin-top: 10px;
 }
 
 #popup-callback-order .middle p {
@@ -10975,6 +11023,7 @@ footer .container .socials a.fb:hover {
   letter-spacing: 1.1px;
   border: 0;
   margin-bottom: 66px;
+  cursor: pointer;
   -webkit-transition: all 300ms linear;
   -o-transition: all 300ms linear;
   transition: all 300ms linear;
@@ -10994,8 +11043,8 @@ footer .container .socials a.fb:hover {
 #popup-callback-order .bottom .bottom-left {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-left: 8px solid #393434;
   left: 0;
@@ -11006,8 +11055,8 @@ footer .container .socials a.fb:hover {
 #popup-callback-order .bottom .bottom-right {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-right: 8px solid #393434;
   right: 0;
@@ -11061,8 +11110,8 @@ footer .container .socials a.fb:hover {
 #popup-menu .menu-popup .top .top-left {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-top: 8px solid #393434;
   border-left: 8px solid #393434;
   left: 0;
@@ -11073,8 +11122,8 @@ footer .container .socials a.fb:hover {
 #popup-menu .menu-popup .top .top-right .close {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   right: 0;
   top: 0;
   margin: 16px 16px 0 0;
@@ -11086,7 +11135,7 @@ footer .container .socials a.fb:hover {
   position: absolute;
   top: 0;
   right: 0;
-  width: 80px;
+  width: 64px;
   display: block;
   background: #393434;
   -webkit-transition-property: -webkit-transform, top, right;
@@ -11099,12 +11148,12 @@ footer .container .socials a.fb:hover {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
-  top: 25px;
-  right: -10px;
+  top: 18px;
+  right: -3px;
 }
 
 #popup-menu .menu-popup .top .top-right .close .right-block {
-  height: 80px;
+  height: 64px;
   position: absolute;
   top: 0;
   right: 0;
@@ -11221,8 +11270,8 @@ footer .container .socials a.fb:hover {
 #popup-menu .menu-popup .bottom .bottom-left {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-left: 8px solid #393434;
   left: 0;
@@ -11233,8 +11282,8 @@ footer .container .socials a.fb:hover {
 #popup-menu .menu-popup .bottom .bottom-right {
   display: block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-bottom: 8px solid #393434;
   border-right: 8px solid #393434;
   right: 0;
@@ -11452,13 +11501,13 @@ footer .container .socials a.fb:hover {
   border-bottom: 8px solid #393434;
 }
 
-.ymaps-2-1-64-balloon__close + .ymaps-2-1-64-balloon__content {
+.ymaps-2-1-65-balloon__close + .ymaps-2-1-65-balloon__content {
   margin: 0;
   padding: 0;
   background: rgba(0, 0, 0, 0);
 }
 
-.ymaps-2-1-64-balloon__close-button {
+.ymaps-2-1-65-balloon__close-button {
   padding-right: 30px;
   padding-top: 15px;
   position: absolute;
@@ -11466,11 +11515,11 @@ footer .container .socials a.fb:hover {
   right: 0;
 }
 
-.ymaps-2-1-64-balloon__layout {
+.ymaps-2-1-65-balloon__layout {
   background: rgba(0, 0, 0, 0);
 }
 
-.ymaps-2-1-64-balloon {
+.ymaps-2-1-65-balloon {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -11485,14 +11534,24 @@ footer .container .socials a.fb:hover {
   opacity: 1;
 }
 
+.blurred {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  -webkit-transition: -webkit-filter 300ms linear;
+  transition: -webkit-filter 300ms linear;
+  -o-transition: filter 300ms linear;
+  transition: filter 300ms linear;
+  transition: filter 300ms linear, -webkit-filter 300ms linear;
+}
+
 .fadeInRight {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
 .fadeInLeft {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
 }
 
 #member-1 {
@@ -11511,6 +11570,7 @@ footer .container .socials a.fb:hover {
 }
 
 .mCS-projects.mCSB_scrollTools .mCSB_draggerContainer {
+  top: 4px !important;
   left: -34px;
 }
 
@@ -11523,6 +11583,166 @@ footer .container .socials a.fb:hover {
   width: 1px;
   background-color: #383434;
   opacity: 0.1;
+}
+
+.projects .top-left-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 4px solid #e44536;
+  border-top: 4px solid #e44536;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .top-right-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-right: 4px solid #e44536;
+  border-top: 4px solid #e44536;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-left-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-left: 4px solid #e44536;
+  border-bottom: 4px solid #e44536;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-right-1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-right: 4px solid #e44536;
+  border-bottom: 4px solid #e44536;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .top-left-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 4px solid #ae8857;
+  border-top: 4px solid #ae8857;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .top-right-3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-right: 4px solid #ae8857;
+  border-top: 4px solid #ae8857;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-left-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-left: 4px solid #ae8857;
+  border-bottom: 4px solid #ae8857;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-right-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-right: 4px solid #ae8857;
+  border-bottom: 4px solid #ae8857;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .top-left-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 4px solid #ff6496;
+  border-top: 4px solid #ff6496;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .top-right-4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-right: 4px solid #ff6496;
+  border-top: 4px solid #ff6496;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-left-4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-left: 4px solid #ff6496;
+  border-bottom: 4px solid #ff6496;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-right-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-right: 4px solid #ff6496;
+  border-bottom: 4px solid #ff6496;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .top-left-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 4px solid #aecc53;
+  border-top: 4px solid #aecc53;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .top-right-8 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-right: 4px solid #aecc53;
+  border-top: 4px solid #aecc53;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-left-8 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-left: 4px solid #aecc53;
+  border-bottom: 4px solid #aecc53;
+  width: 24px;
+  height: 24px;
+}
+
+.projects .bottom-right-8 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-right: 4px solid #aecc53;
+  border-bottom: 4px solid #aecc53;
+  width: 24px;
+  height: 24px;
 }
 
 /*==============  Header  ==============*/
@@ -11552,7 +11772,11 @@ footer .container .socials a.fb:hover {
 
 /*==============  Media  ==============*/
 /*==========  Desktop First  ==========*/
-@media only screen and (max-height: 980px) {
+@media only screen and (min-height: 980px) {
+  .welcome-screen {
+    height: 740px !important;
+    margin-top: 2px !important;
+  }
   .projects {
     height: 740px !important;
   }
@@ -11562,10 +11786,71 @@ footer .container .socials a.fb:hover {
   .our-team svg {
     height: 740px !important;
   }
-  #map {
+  .development {
     height: 740px !important;
   }
+  .development h5 {
+    max-width: 700px !important;
+    width: 100% !important;
+    padding-top: 15px !important;
+  }
+  .development #callback-btn {
+    bottom: -25px !important;
+  }
+  #map {
+    height: 740px !important;
+    margin-top: 1px !important;
+  }
   #popup-callback-order {
+    height: 740px !important;
+  }
+  #popup-callback-order .middle p {
+    margin-bottom: 20px !important;
+  }
+  #popup-callback-order .middle .input-dropdawn {
+    margin-bottom: 50px !important;
+  }
+  .menu-popup {
+    height: 740px !important;
+  }
+}
+
+@media only screen and (max-height: 980px) {
+  .welcome-screen {
+    height: 740px !important;
+    margin-top: 1px !important;
+  }
+  .welcome-screen .middle img {
+    width: 900px;
+  }
+  .projects {
+    height: 740px !important;
+  }
+  .about-us {
+    height: 740px !important;
+  }
+  .our-team svg {
+    height: 740px !important;
+  }
+  .development {
+    height: 740px !important;
+  }
+  .development h5 {
+    max-width: 700px !important;
+    width: 100% !important;
+    padding-top: 15px !important;
+  }
+  .development #callback-btn {
+    bottom: -25px !important;
+  }
+  #map {
+    height: 740px !important;
+    margin-top: 1px !important;
+  }
+  #popup-callback-order {
+    height: 740px !important;
+  }
+  .callback-popup {
     height: 740px !important;
   }
   .menu-popup {
@@ -11574,17 +11859,21 @@ footer .container .socials a.fb:hover {
 }
 
 @media only screen and (max-height: 900px) {
+  .welcome-screen {
+    height: 690px !important;
+  }
+  .welcome-screen .middle img {
+    width: 800px;
+  }
   .projects {
     height: 690px !important;
   }
   .about-us {
     height: 690px !important;
   }
-  .our-team svg {
-    height: 690px !important;
-  }
   #map {
     height: 690px !important;
+    margin-top: 1px !important;
   }
   #popup-callback-order {
     height: 690px !important;
@@ -11595,6 +11884,12 @@ footer .container .socials a.fb:hover {
 }
 
 @media only screen and (max-height: 850px) {
+  .welcome-screen {
+    height: 620px !important;
+  }
+  .welcome-screen .middle img {
+    width: 700px;
+  }
   .projects {
     height: 620px !important;
   }
@@ -11642,15 +11937,19 @@ footer .container .socials a.fb:hover {
     line-height: 14px !important;
   }
   .blur-bg .development #callback-btn {
-    bottom: -20px !important;
+    bottom: -30px !important;
   }
   .our-team svg {
     height: 620px !important;
   }
   #map {
     height: 620px !important;
+    margin-top: 1px !important;
   }
   #popup-callback-order {
+    height: 620px !important;
+  }
+  .callback-popup {
     height: 620px !important;
   }
   .menu-popup {
@@ -11663,7 +11962,7 @@ footer .container .socials a.fb:hover {
 
 @media only screen and (max-height: 790px) {
   .welcome-screen {
-    height: 530px !important;
+    height: 580px !important;
   }
   .projects {
     height: 580px !important;
@@ -11716,8 +12015,12 @@ footer .container .socials a.fb:hover {
   }
   #map {
     height: 580px !important;
+    margin-top: 1px !important;
   }
   #popup-callback-order {
+    height: 580px !important;
+  }
+  .callback-popup {
     height: 580px !important;
   }
   .menu-popup {
@@ -11725,9 +12028,77 @@ footer .container .socials a.fb:hover {
   }
 }
 
+@media only screen and (max-height: 768px) {
+  .welcome-screen {
+    height: 550px !important;
+  }
+  .projects {
+    height: 550px !important;
+  }
+  .about-us {
+    height: 550px !important;
+  }
+  .blur-bg {
+    height: 550px !important;
+  }
+  .blur-bg .development h5 {
+    max-width: 1000px !important;
+    width: 100% !important;
+    padding-top: 10px !important;
+  }
+  .blur-bg .development .site-dev, .blur-bg .development .smm, .blur-bg .development .seo, .blur-bg .development .design, .blur-bg .development .target-ads, .blur-bg .development .mobile-ads {
+    height: 42% !important;
+  }
+  .blur-bg .development .site-dev .title, .blur-bg .development .smm .title, .blur-bg .development .seo .title, .blur-bg .development .design .title, .blur-bg .development .target-ads .title, .blur-bg .development .mobile-ads .title {
+    padding-top: 10px !important;
+    padding-bottom: 3px !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+  }
+  .blur-bg .development .site-dev li, .blur-bg .development .smm li, .blur-bg .development .seo li, .blur-bg .development .design li, .blur-bg .development .target-ads li, .blur-bg .development .mobile-ads li {
+    line-height: 20px !important;
+  }
+  .blur-bg .development .site-dev li a, .blur-bg .development .smm li a, .blur-bg .development .seo li a, .blur-bg .development .design li a, .blur-bg .development .target-ads li a, .blur-bg .development .mobile-ads li a {
+    font-size: 11px !important;
+    line-height: 13px !important;
+  }
+  .blur-bg .development .contexts-ads, .blur-bg .development .banners-ads {
+    height: 58% !important;
+  }
+  .blur-bg .development .contexts-ads .title, .blur-bg .development .banners-ads .title {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+  }
+  .blur-bg .development .contexts-ads li, .blur-bg .development .banners-ads li {
+    line-height: 20px !important;
+  }
+  .blur-bg .development .contexts-ads li a, .blur-bg .development .banners-ads li a {
+    font-size: 11px !important;
+    line-height: 13px !important;
+  }
+  .our-team svg {
+    height: 550px !important;
+  }
+  #map {
+    height: 550px !important;
+    margin-top: 1px !important;
+  }
+  #popup-callback-order {
+    height: 550px !important;
+  }
+  .callback-popup {
+    height: 550px !important;
+  }
+  .menu-popup {
+    height: 550px !important;
+  }
+}
+
 @media only screen and (max-height: 730px) {
   .welcome-screen {
-    height: 470px !important;
+    height: 530px !important;
   }
   .projects {
     height: 530px !important;
@@ -11780,8 +12151,12 @@ footer .container .socials a.fb:hover {
   }
   #map {
     height: 530px !important;
+    margin-top: 1px !important;
   }
   #popup-callback-order {
+    height: 530px !important;
+  }
+  .callback-popup {
     height: 530px !important;
   }
   .menu-popup {
@@ -11791,7 +12166,7 @@ footer .container .socials a.fb:hover {
 
 @media only screen and (max-height: 680px) {
   .welcome-screen {
-    height: 390px !important;
+    height: 470px !important;
   }
   .welcome-screen .top {
     margin-bottom: 0px !important;
@@ -11814,12 +12189,21 @@ footer .container .socials a.fb:hover {
   #popup-callback-order {
     height: 470px !important;
   }
+  .callback-popup {
+    height: 470px !important;
+  }
+  .callback-popup p {
+    margin-bottom: 5px !important;
+  }
   #popup-menu {
     height: 470px !important;
   }
 }
 
 @media only screen and (max-height: 590px) {
+  .welcome-screen {
+    height: 390px !important;
+  }
   .projects {
     height: 390px !important;
   }
@@ -11827,9 +12211,6 @@ footer .container .socials a.fb:hover {
     height: 390px !important;
   }
   .development {
-    height: 390px !important;
-  }
-  .our-team svg {
     height: 390px !important;
   }
   #map {
