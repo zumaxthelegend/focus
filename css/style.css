@@ -9237,7 +9237,7 @@ header #order-btn:hover.services {
   bottom: 4px;
   left: 4px;
   right: 4px;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0);
   opacity: 1;
   z-index: 5;
 }
